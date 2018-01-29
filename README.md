@@ -15,8 +15,6 @@ Currently collects performance counter data from `sys.dm_os_performance_counters
 * documentation
 
 ## Credits
-Based on netdata postgres plugin by: [facetoe](https://github.com/facetoe)
-
-[dangtranhoang](https://github.com/dangtranhoang)
+Based on netdata postgres plugin by: [facetoe](https://github.com/facetoe),[dangtranhoang](https://github.com/dangtranhoang)
 
 Uses [pymssql](http://pymssql.org/) library
