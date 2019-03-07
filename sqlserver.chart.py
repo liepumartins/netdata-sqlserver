@@ -116,9 +116,9 @@ TEMPLATES = {
         'options': [None, 'Transactions on db', 'transactions/s', 'db statistics', 'sqlsrv.db_stat_transactions',
                     'line'],
         'lines': [
-            ['Transactions/sec', 'transactions', 'absolute'],
-            ['Write_Transactions/sec', 'write transactions', 'absolute'],
-            ['Tracked_transactions/sec', 'tracked transactions', 'absolute'],
+            ['Transactions/sec', 'transactions', 'incremental'],
+            ['Write_Transactions/sec', 'write transactions', 'incremental'],
+            ['Tracked_transactions/sec', 'tracked transactions', 'incremental'],
             ['Active_Transactions', 'active transactions', 'absolute']
         ]},
     'db_cache': {
@@ -140,7 +140,7 @@ CHARTS = {
     'server_latches': {
         'options': [None, 'Latches', 'waits/s', 'latch waits', 'sqlsrv.srv_latches', 'line'],
         'lines': [
-            ['Latch_Waits/sec', 'latch waits', 'absolute']
+            ['Latch_Waits/sec', 'latch waits', 'incremental']
         ]
     },
     'crl_exec': {
@@ -164,12 +164,12 @@ CHARTS = {
         'lines': [
         ]},
     'errors': {
-        'options': [None, 'Errors', 'errors', 'errors', 'sqlsrv.db_errors', 'stacked'],
+        'options': [None, 'Errors', 'errors/s', 'errors', 'sqlsrv.db_errors', 'stacked'],
         'lines': [
-            ['DB_Offline_Errors_Errors/sec', 'db offline', 'absolute'],
-            ['Kill_Connection_Errors_Errors/sec', 'kill connection', 'absolute'],
-            ['User_Errors_Errors/sec', 'user', 'absolute'],
-            ['Info_Errors_Errors/sec', 'info', 'absolute']
+            ['DB_Offline_Errors_Errors/sec', 'db offline', 'incremental'],
+            ['Kill_Connection_Errors_Errors/sec', 'kill connection', 'incremental'],
+            ['User_Errors_Errors/sec', 'user', 'incremental'],
+            ['Info_Errors_Errors/sec', 'info', 'incremental']
         ]},
     'waits_started': {
         'options': [None, 'Waits started', 'waits', 'resource waits', 'sqlsrv.db_waits_started', 'stacked'],
@@ -276,56 +276,56 @@ CHARTS = {
         ]
     },
     'statistics': {
-        'options': [None, 'Plan executions', 'count', 'sql statistics', 'sqlsrv.plan_exec', 'line'],
+        'options': [None, 'Plan executions', 'count/s', 'sql statistics', 'sqlsrv.plan_exec', 'line'],
         'lines': [
-            ['Guided_plan_executions/sec', 'guided plan exec', 'absolute'],
-            ['Misguided_plan_executions/sec', 'misguided plan exec', 'absolute'],
+            ['Guided_plan_executions/sec', 'guided plan exec', 'incremental'],
+            ['Misguided_plan_executions/sec', 'misguided plan exec', 'incremental'],
         ]
     },
     'statistics_batch': {
-        'options': [None, 'Batch requests', 'count', 'sql statistics', 'sqlsrv.batch', 'line'],
+        'options': [None, 'Batch requests', 'count/s', 'sql statistics', 'sqlsrv.batch', 'line'],
         'lines': [
-            ['Batch_Requests/sec', 'batch requests', 'absolute'],
+            ['Batch_Requests/sec', 'batch requests', 'incremental'],
         ]
     },
     'statistics_compilations': {
-        'options': [None, 'SQL compilations', 'count', 'sql statistics', 'sqlsrv.compilations', 'line'],
+        'options': [None, 'SQL compilations', 'count/s', 'sql statistics', 'sqlsrv.compilations', 'line'],
         'lines': [
-            ['SQL_Compilations/sec', 'sql compilations', 'absolute'],
+            ['SQL_Compilations/sec', 'sql compilations', 'incremental'],
         ]
     },
     'statistics_recompilations': {
-        'options': [None, 'SQL recompilations', 'count', 'sql statistics', 'sqlsrv.recompilations', 'line'],
+        'options': [None, 'SQL recompilations', 'count/s', 'sql statistics', 'sqlsrv.recompilations', 'line'],
         'lines': [
-            ['SQL_Re-Compilations/sec', 're-compilations', 'absolute'],
+            ['SQL_Re-Compilations/sec', 're-compilations', 'incremental'],
         ]
     },
     'statistics_attention': {
-        'options': [None, 'SQL attention rate', 'count', 'sql statistics', 'sqlsrv.attention', 'line'],
+        'options': [None, 'SQL attention rate', 'rate', 'sql statistics', 'sqlsrv.attention', 'line'],
         'lines': [
-            ['SQL_Attention_rate', 'attention rate', 'absolute'],
+            ['SQL_Attention_rate', 'attention rate', 'incremental'],
         ]
     },
     'statistics_param': {
-        'options': [None, 'Param statistics', 'params', 'sql statistics', 'sqlsrv.param', 'line'],
+        'options': [None, 'Param statistics', 'per second', 'sql statistics', 'sqlsrv.param', 'line'],
         'lines': [
-            ['Forced_Parameterizations/sec', 'forced param', 'absolute'],
-            ['Auto-Param_Attempts/sec', 'auto attempts', 'absolute'],
-            ['Failed_Auto-Params/sec', 'failed auto', 'absolute'],
+            ['Forced_Parameterizations/sec', 'forced param', 'incremental'],
+            ['Auto-Param_Attempts/sec', 'auto attempts', 'incremental'],
+            ['Failed_Auto-Params/sec', 'failed auto', 'incremental'],
         ]
     },
     'statistics_param_safety': {
-        'options': [None, 'Safe/Unsafe Auto Params', 'params', 'sql statistics', 'sqlsrv.param_safety', 'stacked'],
+        'options': [None, 'Safe/Unsafe Auto Params', 'per second', 'sql statistics', 'sqlsrv.param_safety', 'stacked'],
         'lines': [
-            ['Safe_Auto-Params/sec', 'safe', 'absolute'],
-            ['Unsafe_Auto-Params/sec', 'unsafe', 'absolute'],
+            ['Safe_Auto-Params/sec', 'safe', 'incremental'],
+            ['Unsafe_Auto-Params/sec', 'unsafe', 'incremental'],
         ]
     },
     'general_statistics_logins': {
-        'options': [None, 'Logins/Logouts', 'count', 'general statistics', 'sqlsrv.logins', 'line'],
+        'options': [None, 'Logins/Logouts', 'per second', 'general statistics', 'sqlsrv.logins', 'line'],
         'lines': [
-            ['Logouts/sec', 'logouts', 'absolute'],
-            ['Logins/sec', 'logins', 'absolute'],
+            ['Logouts/sec', 'logouts', 'incremental'],
+            ['Logins/sec', 'logins', 'incremental'],
         ]
     },
     'general_statistics_connections': {
