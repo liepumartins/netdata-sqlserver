@@ -20,6 +20,12 @@ SQL Server user for netdata. Granted `view server state` permission.
 * Edit `/etc/netdata/python.d.conf`, add line `sqlserver: yes`
 * Restart netdata
 
+## Screenshots
+
+![Transactions](/../screenshots/screenshots/transactions.png?raw=true "Example of transactions per second")
+
+![Batch requests](/../screenshots/screenshots/batch-requests.png?raw=true "Example of batch requests per second")
+
 ## TODO
 * define missing charts (suggestions are welcome)
 * possibly organize charts to provide most meaningful results
