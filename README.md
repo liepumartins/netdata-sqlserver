@@ -7,9 +7,22 @@ Everything is work in progress.
 
 Currently collects performance counter data from `sys.dm_os_performance_counters`
 
+## Requirements
+
+[pymssql](http://pymssql.org/) must be present on the system. Get it with something like `pip install pymssql`
+
+SQL Server user for netdata. Granted `view server state` permission.
+
+## Installation
+* Place `sqlserver.chart.py` in `/usr/libexec/netdata/python.d/`
+* Place `sqlserver.conf` in `/etc/netdata/python.d/`
+* Edit `/etc/netdata/python.d/sqlserver.conf`, provide username, password, database names to be monitored.
+* Edit `/etc/netdata/python.d.conf`, add line `sqlserver: yes`
+* Restart netdata
+
 ## TODO
-* define all charts
-* organize charts to provide most meaningful results
+* define missing charts (suggestions are welcome)
+* possibly organize charts to provide most meaningful results
 * implement lock/wait type data collection
 * screenshots
 * documentation
