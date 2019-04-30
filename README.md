@@ -13,6 +13,8 @@ Currently collects performance counter data from `sys.dm_os_performance_counters
 
 SQL Server user for netdata. Granted `view server state` permission.
 
+systemd unit file should be altered for plugin to work on boot. Append `mssql-server.service` to `After=` line.
+
 ## Installation
 * Place `sqlserver.chart.py` in `/usr/libexec/netdata/python.d/`
 * Place `sqlserver.conf` in `/etc/netdata/python.d/`
