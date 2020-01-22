@@ -360,6 +360,7 @@ class Service(SimpleService):
             appname='netdata monitoring'
             )
         params.update(self.configuration)
+        params.pop('autodetection_retry', None)
 
         if not self.connection:
             try:
