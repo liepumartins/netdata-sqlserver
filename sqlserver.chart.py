@@ -353,15 +353,12 @@ class Service(SimpleService):
 
     def _connect(self):
         params = dict(
-            server='localhost',
-            port=1433,
-            user='netdata',
-            password=None,
-            appname='netdata monitoring'
-            )
-        params.update(self.configuration)
-        params.pop('autodetection_retry', None)
-
+            server=self.configuration.get('server', 'localhost'),
+            port=self.configuration.get('port', 1433),
+            user=self.configuration.get('user', 'netdata'),
+            password=self.configuration.get('password', None),
+            appname=self.configuration.get('appname', 'netdata monitoring')
+        )
         if not self.connection:
             try:
                 self.connection = pymssql.connect(**params)
