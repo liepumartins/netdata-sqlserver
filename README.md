@@ -1,7 +1,7 @@
 # netdata-sqlserver
 netdata python plugin for sqlserver statistics
 
-SQL Server 2017 is available on linux and [netdata](https://github.com/firehol/netdata) is best monitoring tool, therefore this plugin.
+SQL Server is available on linux and [netdata](https://github.com/netdata/netdata) is the best monitoring tool, therefore this plugin.
 
 Everything is work in progress.
 
@@ -19,7 +19,7 @@ systemd unit file should be altered for plugin to work on boot. Append `mssql-se
 * Place `sqlserver.chart.py` in `/usr/libexec/netdata/python.d/`
 * Place `sqlserver.conf` in `/etc/netdata/python.d/`
 * Edit `/etc/netdata/python.d/sqlserver.conf`, provide username, password, database names to be monitored.
-* Edit `/etc/netdata/python.d.conf`, add line `sqlserver: yes`
+* Edit config using `/etc/netdata/edit-config python.d.conf`, add line `sqlserver: yes`
 * Restart netdata
 
 ## Screenshots
@@ -36,7 +36,7 @@ systemd unit file should be altered for plugin to work on boot. Append `mssql-se
 * documentation
 
 ## Troubleshoot
-Something meaningful can be acquired using `sudo -u netdata /usr/libexec/netdata/plugins.d/python.d.plugin sqlserver`
+Something meaningful can be acquired using `sudo -u netdata /usr/libexec/netdata/plugins.d/python.d.plugin sqlserver debug`
 
 ## Credits
 Based on netdata postgres plugin by: [facetoe](https://github.com/facetoe),[dangtranhoang](https://github.com/dangtranhoang)
