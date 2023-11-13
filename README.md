@@ -9,7 +9,7 @@ Currently collects performance counter data from `sys.dm_os_performance_counters
 
 ## Requirements
 
-[pymssql](http://pymssql.org/) must be present on the system. Get it with something like `pip install pymssql`
+[pymssql](http://pymssql.org/) must be present on the system. Get it with something like `pip install pymssql` or `apt install python3-pymssql`
 
 SQL Server user for netdata. Granted `view server state` permission.
 
@@ -34,6 +34,9 @@ systemd unit file should be altered for plugin to work on boot. Append `mssql-se
 * implement lock/wait type data collection
 * screenshots
 * documentation
+
+## Troubleshoot
+Something meaningful can be acquired using `sudo -u netdata /usr/libexec/netdata/plugins.d/python.d.plugin sqlserver`
 
 ## Credits
 Based on netdata postgres plugin by: [facetoe](https://github.com/facetoe),[dangtranhoang](https://github.com/dangtranhoang)
